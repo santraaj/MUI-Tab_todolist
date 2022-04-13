@@ -6,7 +6,7 @@ import Tab from '@mui/material/Tab';
 import Todolist from './Todolist';
 
 function TabApp() {
-  const [value, setValue] = useState('one');
+  const [value, setValue] = useState('home');
 
   const handleChange = (event, value) => {
     setValue(value);
@@ -15,11 +15,11 @@ function TabApp() {
   return (
     <div>
       <Tabs value={value} onChange={handleChange}>
-        <Tab value="one" label="Home" />
-        <Tab value="two" label="Todos" />
+        <Tab value="home" label="Home" />
+        <Tab value="todos" label="Todos" />
       </Tabs>
-      {value === 'one' && <div>HOME <h1>Welcome! Create your own To-do list here</h1></div>}
-      {value === 'two' && <div>TODOS <Todolist /> </div>}
+      {value === 'home' && <div>HOME <h1>Welcome! Create your own To-do list here</h1></div>}
+      {value === 'todos' && <div>TODOS <Todolist /> </div>}
     </div>
   );
 };
